@@ -1,4 +1,4 @@
-ITGmania, as of 2024/09/20, is now licensed under the GPLv3, or
+SM5-LTS, as of 2024/09/20, is now licensed under the GPLv3, or
 (at your option) any later version.. See LICENSE for the full license text.
 
 The contents of the file below this line are the still the same as before

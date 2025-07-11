@@ -3049,6 +3049,6 @@
 		<Constant name='right' value='&apos;HorizAlign_Right&apos;'/>
 		<Constant name='top' value='&apos;VertAlign_Top&apos;'/>
 	</Constants>
-	<Version>ITGmania0.6.0-git-ddc112260f</Version>
+	<Version>SM5-LTS0.6.0-git-ddc112260f</Version>
 	<Date>2023-03-19</Date>
 </Lua>

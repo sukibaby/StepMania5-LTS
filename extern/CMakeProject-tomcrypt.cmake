@@ -470,7 +470,7 @@ if(WITH_NO_ROLC_TOMCRYPT)
 endif()
 
 # Fixes build failures due to clang warnings
-# See itgmania/itgmania#107 for details
+# See SM5-LTS/SM5-LTS#107 for details
 # TODO(teejusb/natano): Remove these two lines once these issues have been fixed upstream.
 set_property(TARGET "tomcrypt" PROPERTY C_STANDARD 90)
 set_property(TARGET "tomcrypt" PROPERTY C_STANDARD_REQUIRED ON)

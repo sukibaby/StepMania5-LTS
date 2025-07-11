@@ -198,13 +198,13 @@ BEGIN
     BEGIN
         BLOCK "040904b0"
         BEGIN
-            VALUE "CompanyName", "ITGmania Team \n https://www.itgmania.com/"
-            VALUE "FileDescription", "ITGmania"
+            VALUE "CompanyName", "SM5-LTS Team \n https://www.SM5-LTS.com/"
+            VALUE "FileDescription", "SM5-LTS"
             VALUE "FileVersion", "@SM_VERSION_GIT@"
-            VALUE "InternalName", "ITGmania"
-            VALUE "LegalCopyright", "Copyright © 2024"
-            VALUE "OriginalFilename", "ITGmania.exe"
-            VALUE "ProductName", "ITGmania"
+            VALUE "InternalName", "SM5-LTS"
+            VALUE "LegalCopyright", "Copyright ï¿½ 2024"
+            VALUE "OriginalFilename", "SM5-LTS.exe"
+            VALUE "ProductName", "SM5-LTS"
             VALUE "ProductVersion", "@SM_VERSION_GIT@"
         END
     END

@@ -48,15 +48,15 @@ if(NOT APPLE)
 endif()
 
 if(MSVC OR APPLE)
-  set(SM_NAME_RELEASE "ITGmania")
-  set(SM_NAME_DEBUG "ITGmania-debug")
-  set(SM_NAME_MINSIZEREL "ITGmania-min-size")
-  set(SM_NAME_RELWITHDEBINFO "ITGmania-release-symbols")
+  set(SM_NAME_RELEASE "SM5-LTS")
+  set(SM_NAME_DEBUG "SM5-LTS-debug")
+  set(SM_NAME_MINSIZEREL "SM5-LTS-min-size")
+  set(SM_NAME_RELWITHDEBINFO "SM5-LTS-release-symbols")
 else()
-  set(SM_NAME_RELEASE "itgmania")
-  set(SM_NAME_DEBUG "itgmania-debug")
-  set(SM_NAME_MINSIZEREL "itgmania-min-size")
-  set(SM_NAME_RELWITHDEBINFO "itgmania-release-symbols")
+  set(SM_NAME_RELEASE "SM5-LTS")
+  set(SM_NAME_DEBUG "SM5-LTS-debug")
+  set(SM_NAME_MINSIZEREL "SM5-LTS-min-size")
+  set(SM_NAME_RELWITHDEBINFO "SM5-LTS-release-symbols")
 endif()
 
 if(APPLE)
@@ -243,10 +243,10 @@ elseif(APPLE)
   # Add the ability to copy the resource file.
   add_custom_command(TARGET "${SM_EXE_NAME}" POST_BUILD
                      COMMAND ${CMAKE_COMMAND} -E make_directory
-                             "$<TARGET_FILE_DIR:ITGmania>/../Resources"
+                             "$<TARGET_FILE_DIR:SM5-LTS>/../Resources"
                      COMMAND ${CMAKE_COMMAND} -E copy
                              "${SM_XCODE_DIR}/logo.icns"
-                             "$<TARGET_FILE_DIR:ITGmania>/../Resources/")
+                             "$<TARGET_FILE_DIR:SM5-LTS>/../Resources/")
 else() # Linux
   set_target_properties("${SM_EXE_NAME}"
                         PROPERTIES RUNTIME_OUTPUT_DIRECTORY
@@ -476,9 +476,9 @@ target_include_directories("${SM_EXE_NAME}" PUBLIC ${SM_INCLUDE_DIRS})
 if(WIN32)
   set(SM_INSTALL_DESTINATION ".")
 elseif(APPLE)
-  set(SM_INSTALL_DESTINATION "ITGmania")
+  set(SM_INSTALL_DESTINATION "SM5-LTS")
 else()
-  set(SM_INSTALL_DESTINATION "itgmania")
+  set(SM_INSTALL_DESTINATION "SM5-LTS")
 endif()
 
 if(WIN32)
@@ -501,12 +501,12 @@ if(WIN32)
           DESTINATION "${SM_FULL_INSTALLATION_PATH}")
   install(FILES "${SM_PROGRAM_DIR}/swscale-6.dll"
           DESTINATION "${SM_FULL_INSTALLATION_PATH}")
-  install(FILES "${SM_PROGRAM_DIR}/ITGmania.vdi"
+  install(FILES "${SM_PROGRAM_DIR}/SM5-LTS.vdi"
           DESTINATION "${SM_FULL_INSTALLATION_PATH}")
 else()
   install(TARGETS "${SM_EXE_NAME}" DESTINATION "${SM_INSTALL_DESTINATION}")
   if(LINUX)
-    install(FILES "${SM_ROOT_DIR}/itgmania.desktop"
+    install(FILES "${SM_ROOT_DIR}/SM5-LTS.desktop"
             DESTINATION "${SM_INSTALL_DESTINATION}")
     install(PROGRAMS "${SM_ROOT_DIR}/Installer/setup.sh" DESTINATION ".")
   endif()
