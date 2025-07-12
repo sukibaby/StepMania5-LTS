@@ -750,38 +750,8 @@ RString SongUtil::GetSectionNameFromSongAndSort( const Song* pSong, SortOrder so
 				return RString();
 		}
 	case SORT_POPULARITY:
-	case SORT_POPULARITY_P1:
-	case SORT_POPULARITY_P2:
 	case SORT_RECENT:
-	case SORT_RECENT_P1:
-	case SORT_RECENT_P2:
 		return THEME->GetString("MusicWheel", ssprintf("%s%s", SortOrderToString(so).c_str(), "Text"));
-	case SORT_TOP_GRADES_P1:
-			{
-			int iCounts[NUM_Grade];
-			PROFILEMAN->GetProfile(PLAYER_1)->GetGrades( pSong, GAMESTATE->GetCurrentStyle(PLAYER_1)->m_StepsType, iCounts );
-
-			for( int i=Grade_Tier01; i<NUM_Grade; ++i )
-			{
-				Grade g = (Grade)i;
-				if( iCounts[i] > 0 )
-					return ssprintf( "%4s x %d", GradeToLocalizedString(g).c_str(), iCounts[i] );
-			}
-			return GradeToLocalizedString( Grade_NoData );
-		}
-	case SORT_TOP_GRADES_P2:
-			{
-			int iCounts[NUM_Grade];
-			PROFILEMAN->GetProfile(PLAYER_2)->GetGrades( pSong, GAMESTATE->GetCurrentStyle(PLAYER_2)->m_StepsType, iCounts );
-
-			for( int i=Grade_Tier01; i<NUM_Grade; ++i )
-			{
-				Grade g = (Grade)i;
-				if( iCounts[i] > 0 )
-					return ssprintf( "%4s x %d", GradeToLocalizedString(g).c_str(), iCounts[i] );
-			}
-			return GradeToLocalizedString( Grade_NoData );
-		}
 	case SORT_TOP_GRADES:
 		{
 			int iCounts[NUM_Grade];
@@ -814,8 +784,7 @@ RString SongUtil::GetSectionNameFromSongAndSort( const Song* pSong, SortOrder so
 				return ssprintf("%02d", pSteps->GetMeter() );
 			return SORT_NOT_AVAILABLE.GetValue();
 		}
-	case SORT_METER:
-		return RString();
+
 	case SORT_MODE_MENU:
 		return RString();
 	case SORT_ALL_COURSES:

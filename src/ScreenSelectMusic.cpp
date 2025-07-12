@@ -1927,22 +1927,22 @@ void ScreenSelectMusic::AfterMusicChange()
 		g_sCDTitlePath = pSong->GetCDTitlePath();
 		g_bWantFallbackCdTitle = true;
 
-		if (GAMESTATE->m_SortOrder == SORT_METER)
-		{
-			for (int i = m_vpSteps.size() - 1; i >= 0; i--)
-			{
-				if (m_vpSteps[i]->GetMeter() == StringToInt(GAMESTATE->sLastOpenSection))
-				{
-					SwitchToDifficulty(m_vpSteps[i]->GetDifficulty());
-					break;
-				}
-			}
-		}
-		else
-		{
+		//if (GAMESTATE->m_SortOrder == SORT_METER)
+		//{
+		//	for (int i = m_vpSteps.size() - 1; i >= 0; i--)
+		//	{
+		//		if (m_vpSteps[i]->GetMeter() == StringToInt(GAMESTATE->sLastOpenSection))
+		//		{
+		//			SwitchToDifficulty(m_vpSteps[i]->GetDifficulty());
+		//			break;
+		//		}
+		//	}
+		//}
+		//else
+		//{
 			SwitchToPreferredDifficulty();
-		}
-		break;
+		//}
+		//break;
 
 	case WheelItemDataType_Course:
 	{
