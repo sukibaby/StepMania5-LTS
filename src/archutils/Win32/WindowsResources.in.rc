@@ -198,11 +198,11 @@ BEGIN
     BEGIN
         BLOCK "040904b0"
         BEGIN
-            VALUE "CompanyName", "SM5-LTS Team \n https://www.SM5-LTS.com/"
+            VALUE "CompanyName", "SM5-LTS Team \n"
             VALUE "FileDescription", "SM5-LTS"
             VALUE "FileVersion", "@SM_VERSION_GIT@"
             VALUE "InternalName", "SM5-LTS"
-            VALUE "LegalCopyright", "Copyright � 2024"
+            VALUE "LegalCopyright", "GPL v3"
             VALUE "OriginalFilename", "SM5-LTS.exe"
             VALUE "ProductName", "SM5-LTS"
             VALUE "ProductVersion", "@SM_VERSION_GIT@"
