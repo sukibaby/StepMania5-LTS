@@ -1,4 +1,4 @@
-// I've reorganized StdString.h to be optimized for the ITGmania engine.
+// I've reorganized StdString.h to be optimized for the SM5-LTS engine.
 //
 // A huge amount of code bloat was traditionally due to these functions being
 // inlined. Performance issues with RStrings are largely mitigated by migrating

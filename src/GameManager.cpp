@@ -3223,7 +3223,7 @@ static const Game *g_Games[] =
 	&g_Game_Lights,
 
 	// We don't intend to support the following game modes so comment them out.
-	// TODO(teejusb/natano): Remove the following game modes from ITGmania
+	// TODO(teejusb/natano): Remove the following game modes from SM5-LTS
 	// whenever they start hindering development.
 	// &g_Game_KB7,
 	// &g_Game_Ez2,

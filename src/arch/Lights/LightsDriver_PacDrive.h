@@ -48,7 +48,7 @@ typedef union
 		//NOTE: this is intentionally byte swapped
 		//as Ultimarc's library does this, the firmware expects this order.
 		//this matches the physical location of each output with the variable name.
-		//see this code snippet: https://github.com/itgmania/itgmania/issues/921#issuecomment-3008263137
+		//see this code snippet: https://github.com/SM5-LTS/SM5-LTS/issues/921#issuecomment-3008263137
 		bool led09 : 1;
 		bool led10 : 1;
 		bool led11 : 1;

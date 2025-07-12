@@ -564,7 +564,7 @@ FunctionEnd
   
   ; Modify the settings for MUI_PAGE_FINISH here.
   !define MUI_FINISHPAGE_RUN_NOTCHECKED
-  !define MUI_FINISHPAGE_RUN_TEXT "Launch ITGmania"
+  !define MUI_FINISHPAGE_RUN_TEXT "Launch SM5-LTS"
   
   !insertmacro MUI_PAGE_FINISH
 
@@ -718,8 +718,8 @@ Section "-Core installation"
   
   ; Associate SMZIP files. (Yes, we still use them it seems)
   WriteRegStr HKEY_LOCAL_MACHINE "SOFTWARE\Classes\smzipfile" "" "SMZIP package"
-  WriteRegStr HKEY_LOCAL_MACHINE "SOFTWARE\Classes\smzipfile\DefaultIcon" "" "$INSTDIR\Program\ITGmania.exe,1"
-  WriteRegStr HKEY_LOCAL_MACHINE "SOFTWARE\Classes\smzipfile\shell\open\command" "" '"$INSTDIR\Program\ITGmania.exe" "%1"'
+  WriteRegStr HKEY_LOCAL_MACHINE "SOFTWARE\Classes\smzipfile\DefaultIcon" "" "$INSTDIR\Program\SM5-LTS.exe,1"
+  WriteRegStr HKEY_LOCAL_MACHINE "SOFTWARE\Classes\smzipfile\shell\open\command" "" '"$INSTDIR\Program\SM5-LTS.exe" "%1"'
   WriteRegStr HKEY_LOCAL_MACHINE "SOFTWARE\Classes\.smzip" "" "smzipfile"
   
   !insertmacro MUI_INSTALLOPTIONS_READ $INSTALL_DESKTOP "NSIS.InstallOptions.ini" "Field 5" "State"

@@ -11,8 +11,8 @@ cmake_install.cmake
 CPackConfig.cmake
 CPackSourceConfig.cmake
 # The following are generated from CMake, and thus should be stopped.
-ITGmania.project
-ITGmania.workspace
+SM5-LTS.project
+SM5-LTS.workspace
 Build/
 !Build/INSTALL.md
 !Build/README.md
@@ -60,10 +60,10 @@ Thumbs.db
 !extern/ffmpeg-w32/*/*.dll
 
 # Linux General Files
-itgmania
-itgmania-debug
-itgmania-min-size
-itgmania-release-symbols
+SM5-LTS
+SM5-LTS-debug
+SM5-LTS-min-size
+SM5-LTS-release-symbols
 *.core
 
 # StepMania Specific
@@ -84,7 +84,7 @@ src/*.so
 Data/SpeedMods.txt
 crashinfo.txt
 Utils/temp*
-Program/ITGmania*.lib
+Program/SM5-LTS*.lib
 
 # Unknown File Types
 *.dia

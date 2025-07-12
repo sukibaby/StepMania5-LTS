@@ -277,7 +277,7 @@ int MovieDecoder_FFMpeg::DecodeMovie()
 			HandleReset();
 		}
 
-		int status = DecodeFrame();
+		thread_local int status = DecodeFrame();
 
 		// If cancelled (quitting a song, scrolling the banner), or fatal error,
 		// stop decoding.

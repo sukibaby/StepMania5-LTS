@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=StepMania 5 LTS
+GenericName=Rhythm and dance game
+TryExec=/opt/SM5-LTS/SM5-LTS
+Exec=/opt/SM5-LTS/SM5-LTS
+Terminal=false
+Icon=/opt/SM5-LTS/Data/logo.svg
+Type=Application
+Categories=Game;ArcadeGame
+Comment=A cross-platform rhythm video game.

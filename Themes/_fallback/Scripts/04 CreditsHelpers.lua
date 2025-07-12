@@ -23,6 +23,12 @@ local line_height= 30 -- so that actor logos can use it.
 
 local stepmania_credits= {
 	{
+		name= "StepMania 5.1 Long Term Support",
+		"based on ITGmania 1.1.0",
+		"by sukibaby",
+		"https://github.com/sukibaby",
+	},
+	{
 		name="ITGmania Team",
 		"Martin Natano (natano)",
 		"teejusb",
@@ -72,7 +78,7 @@ local stepmania_credits= {
 	},
 	{
 		name= "Other Contributors",
-		{type= "subsection", name= "ITGmania"},
+		{type= "subsection", name= "SM5-LTS"},
 		"Club Fantastic (https://www.clubfantastic.com/)",
 		"DinsFire64 (Mine Fix)",
 		"EvocaitArt (Enchantment NoteSkin)",
@@ -305,7 +311,7 @@ StepManiaCredits= {
 	RandomCopyrightMessage= function()
 		return {
 			name= "Copyright",
-			"ITGmania is released under the terms of the MIT license.",
+			"SM5-LTS is released under the terms of the MIT license.",
 			"If you paid for the program you've been " .. Fooled() .. ".",
 			"All content is the sole property of their respectful owners."
 		}

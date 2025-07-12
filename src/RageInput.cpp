@@ -8,7 +8,7 @@
 
 #if LINUX
 // FIXME: bit gross to include this here, see GH issue #73:
-// https://github.com/itgmania/itgmania/issues/73#issuecomment-2597176788
+// https://github.com/SM5-LTS/SM5-LTS/issues/73#issuecomment-2597176788
 #include "arch/InputHandler/LinuxInputManager.h"
 #endif
 

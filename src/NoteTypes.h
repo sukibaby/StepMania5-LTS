@@ -18,8 +18,6 @@ struct TapNoteResult
 	TapNoteResult() : tns(TNS_None), fTapNoteOffset(0.f), bHidden(false), bHeld(false) { }
 	/** @brief The TapNoteScore that was achieved by the player. */
 	TapNoteScore	tns;
-	/** @brief The TapNoteScore of any early hits of this tap note. */
-	TapNoteScore	earlyTns;
 
 	/**
 	 * @brief Offset, in seconds, for a tap grade.
@@ -28,15 +26,6 @@ struct TapNoteResult
 	 * it was hit late. These values are only meaningful for graded taps
 	 * (tns >= TNS_W5). */
 	float		fTapNoteOffset;
-
-	/**
-	 * @brief Offset, in seconds, for the early tap grade.
-	 *
-	 * Negative numbers mean the note was hit early; positive numbers mean
-	 * it was hit late. These values are only meaningful for graded taps
-	 * (tns >= TNS_W5). */
-	float		fEarlyTapNoteOffset;
-
 
 	/** @brief If the whole row has been judged, all taps on the row will be set to hidden. */
 	bool		bHidden;

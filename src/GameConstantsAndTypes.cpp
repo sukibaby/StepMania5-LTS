@@ -163,14 +163,9 @@ static const char *SortOrderNames[] = {
 	"Title",
 	"BPM",
 	"Popularity",
-	"PopularityP1",
-	"PopularityP2",
 	"TopGrades",
-	"TopP1Grades",
-	"TopP2Grades",
 	"Artist",
 	"Genre",
-	"Meter",
 	"BeginnerMeter",
 	"EasyMeter",
 	"MediumMeter",
@@ -188,8 +183,6 @@ static const char *SortOrderNames[] = {
 	"Length",
 	"Roulette",
 	"Recent",
-	"RecentP1",
-	"RecentP2",
 };
 XToString( SortOrder );
 StringToX( SortOrder );

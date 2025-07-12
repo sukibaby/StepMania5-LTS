@@ -1,3 +1,8 @@
+SM5-LTS is based on ITGmania 1.1.0, but brings back several SM% assets which
+were removed by ITGmania. SM5-LTS bears an identical license to ITGmania 1.1.0
+
+-------------------
+
 ITGmania, as of 2024/09/20, is now licensed under the GPLv3, or
 (at your option) any later version.. See LICENSE for the full license text.
 
