@@ -23,7 +23,13 @@ local line_height= 30 -- so that actor logos can use it.
 
 local stepmania_credits= {
 	{
-		name="SM5-LTS Team",
+		name= "StepMania 5.1 Long Term Support",
+		"based on ITGmania 1.1.0",
+		"by sukibaby",
+		"https://github.com/sukibaby",
+	},
+	{
+		name="ITGmania Team",
 		"Martin Natano (natano)",
 		"teejusb",
 	},
