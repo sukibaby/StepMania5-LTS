@@ -335,7 +335,7 @@ bool MusicWheel::SelectSong( const Song *p )
 
 	unsigned i;
 	std::vector<MusicWheelItemData *> &from = getWheelItemsData(GAMESTATE->m_SortOrder);
-	if (GAMESTATE->sLastOpenSection != "" && (GAMESTATE->m_SortOrder == SORT_PREFERRED || GAMESTATE->m_SortOrder == SORT_METER)) {
+	if (GAMESTATE->sLastOpenSection != "" && (GAMESTATE->m_SortOrder == SORT_PREFERRED)) {
 		// Return to the last open section if it is defined and exists in the current sort
 		for( i=0; i<from.size(); i++ )
 		{
@@ -555,18 +555,13 @@ void MusicWheel::BuildWheelItemDatas( std::vector<MusicWheelItemData *> &arrayWh
 			}
 			break;
 		}
-		case SORT_METER:
 		case SORT_PREFERRED:
 		case SORT_ROULETTE:
 		case SORT_GROUP:
 		case SORT_TITLE:
 		case SORT_BPM:
 		case SORT_POPULARITY:
-		case SORT_POPULARITY_P1:
-		case SORT_POPULARITY_P2:
 		case SORT_TOP_GRADES:
-		case SORT_TOP_GRADES_P1:
-		case SORT_TOP_GRADES_P2:
 		case SORT_ARTIST:
 		case SORT_GENRE:
 		case SORT_BEGINNER_METER:
@@ -580,8 +575,6 @@ void MusicWheel::BuildWheelItemDatas( std::vector<MusicWheelItemData *> &arrayWh
 		case SORT_DOUBLE_CHALLENGE_METER:
 		case SORT_LENGTH:
 		case SORT_RECENT:
-		case SORT_RECENT_P1:
-		case SORT_RECENT_P2:
 		{
 			// Make an array of Song*, then sort them
 			std::vector<Song*> arraySongs;
@@ -592,9 +585,6 @@ void MusicWheel::BuildWheelItemDatas( std::vector<MusicWheelItemData *> &arrayWh
 			// sort the songs
 			switch( so )
 			{
-				case SORT_METER:
-					SONGMAN->UpdateMeterSort(arraySongs);
-					break;
 				case SORT_PREFERRED:
 					// obey order specified by the preferred sort list
 					break;
@@ -627,31 +617,8 @@ void MusicWheel::BuildWheelItemDatas( std::vector<MusicWheelItemData *> &arrayWh
 						arraySongs.erase( arraySongs.begin()+MOST_PLAYED_SONGS_TO_SHOW, arraySongs.end() );
 					bUseSections = true;
 					break;
-				case SORT_POPULARITY_P1:
-					if( PROFILEMAN->IsPersistentProfile(PLAYER_1) )
-						SongUtil::SortSongPointerArrayByNumPlays( arraySongs, ProfileSlot_Player1, true );
-					if( (int) arraySongs.size() > MOST_PLAYED_SONGS_TO_SHOW )
-						arraySongs.erase( arraySongs.begin()+MOST_PLAYED_SONGS_TO_SHOW, arraySongs.end() );
-					bUseSections = true;
-					break;
-				case SORT_POPULARITY_P2:
-					if( PROFILEMAN->IsPersistentProfile(PLAYER_2) )
-						SongUtil::SortSongPointerArrayByNumPlays( arraySongs, ProfileSlot_Player2, true );
-					if( (int) arraySongs.size() > MOST_PLAYED_SONGS_TO_SHOW )
-						arraySongs.erase( arraySongs.begin()+MOST_PLAYED_SONGS_TO_SHOW, arraySongs.end() );
-					bUseSections = true;
-					break;
 				case SORT_TOP_GRADES:
 						SongUtil::SortSongPointerArrayByGrades( arraySongs, true );
-					break;
-				case SORT_TOP_GRADES_P1:
-					// Check if player profile is persistent
-					if( PROFILEMAN->IsPersistentProfile(PLAYER_1) )
-						SongUtil::SortSongPointerArrayByProfileGrades( arraySongs, true, PLAYER_1);
-					break;
-				case SORT_TOP_GRADES_P2:
-					if( PROFILEMAN->IsPersistentProfile(PLAYER_2) )
-						SongUtil::SortSongPointerArrayByProfileGrades( arraySongs, true, PLAYER_2);
 					break;
 				case SORT_ARTIST:
 					SongUtil::SortSongPointerArrayByArtist( arraySongs );
@@ -664,20 +631,6 @@ void MusicWheel::BuildWheelItemDatas( std::vector<MusicWheelItemData *> &arrayWh
 					break;
 				case SORT_RECENT:
 					SongUtil::SortByMostRecentlyPlayedForMachine( arraySongs );
-					if( (int) arraySongs.size() > RECENT_SONGS_TO_SHOW )
-						arraySongs.erase( arraySongs.begin()+RECENT_SONGS_TO_SHOW, arraySongs.end() );
-					bUseSections = true;
-					break;
-				case SORT_RECENT_P1:
-					if( PROFILEMAN->IsPersistentProfile(PLAYER_1) )
-						SongUtil::SortByMostRecentlyPlayedForProfile( arraySongs, PLAYER_1 );
-					if( (int) arraySongs.size() > RECENT_SONGS_TO_SHOW )
-						arraySongs.erase( arraySongs.begin()+RECENT_SONGS_TO_SHOW, arraySongs.end() );
-					bUseSections = true;
-					break;
-				case SORT_RECENT_P2:
-					if( PROFILEMAN->IsPersistentProfile(PLAYER_2) )
-						SongUtil::SortByMostRecentlyPlayedForProfile( arraySongs, PLAYER_2 );
 					if( (int) arraySongs.size() > RECENT_SONGS_TO_SHOW )
 						arraySongs.erase( arraySongs.begin()+RECENT_SONGS_TO_SHOW, arraySongs.end() );
 					bUseSections = true;
@@ -731,11 +684,8 @@ void MusicWheel::BuildWheelItemDatas( std::vector<MusicWheelItemData *> &arrayWh
 					case SORT_GROUP:
 						SongUtil::SortSongPointerArrayByGroup(arraySongs);
 						break;
-					case SORT_METER:
 					case SORT_PREFERRED:
 					case SORT_TOP_GRADES:
-					case SORT_TOP_GRADES_P1:
-					case SORT_TOP_GRADES_P2:
 					case SORT_BPM:
 					case SORT_LENGTH:
 						break;	// don't sort by section
@@ -767,23 +717,6 @@ void MusicWheel::BuildWheelItemDatas( std::vector<MusicWheelItemData *> &arrayWh
 								arrayWheelItemDatas.push_back( new MusicWheelItemData(WheelItemDataType_Song, song, sectionName, nullptr, nullptr, SONGMAN->GetSongColor(song), 0) );
 							}
 						}
-					}
-					break;
-				case SORT_METER:
-					if( bUseSections )
-					{
-						int iSectionCount = 0;
-						for (auto const& [sectionName, songs] : SONGMAN->GetMeterToSongsMap()) {
-							RageColor colorSection = SECTION_COLORS.GetValue(iSectionColorIndex);
-							iSectionColorIndex = (iSectionColorIndex+1) % NUM_SECTION_COLORS;
-							// Add the section item
-							arrayWheelItemDatas.push_back( new MusicWheelItemData(WheelItemDataType_Section, nullptr, ssprintf("%d",sectionName), nullptr, nullptr, colorSection, songs.size()) );
-							// Add all the songs in this section
-							for (auto const& song : songs)
-							{
-								arrayWheelItemDatas.push_back( new MusicWheelItemData(WheelItemDataType_Song, song, ssprintf("%d",sectionName), nullptr, nullptr, SONGMAN->GetSongColor(song), 0) );
-							}
-						} 
 					}
 					break;
 				case SORT_GROUP:
