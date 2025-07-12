@@ -60,7 +60,7 @@
 #include "LightsManager.h"
 #include "ModelManager.h"
 #include "CryptManager.h"
-#include "NetworkManager.h"
+// #include "NetworkManager.h"
 #include "MessageManager.h"
 #include "StatsManager.h"
 #include "GameLoop.h"
@@ -293,7 +293,7 @@ void ShutdownGame()
 		LIGHTSMAN->TurnOffAllLights();
 	}
 
-	RageUtil::SafeDelete( NETWORK );
+	//RageUtil::SafeDelete( NETWORK );
 	RageUtil::SafeDelete( SCREENMAN );
 	RageUtil::SafeDelete( STATSMAN );
 	RageUtil::SafeDelete( MESSAGEMAN );
@@ -957,7 +957,7 @@ int sm_main(int argc, char* argv[])
 	UNLOCKMAN	= new UnlockManager;
 	SONGMAN->UpdatePopular();
 	SONGMAN->UpdatePreferredSort();
-	NETWORK		= new NetworkManager;
+	//NETWORK		= new NetworkManager;
 	STATSMAN	= new StatsManager;
 
 	// Initialize which courses are ranking courses here.
