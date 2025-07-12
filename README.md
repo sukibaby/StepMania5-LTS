@@ -1,13 +1,13 @@
-StepMania 5 LTS
+StepMania 5 Long Term Support
 ========
 
 I am one of the developers of [ITGmania](http://github.com/itgmania/itgmania), which itself is based on [StepMania 5.1](https://github.com/stepmania/stepmania/tree/5_1-new).
 
-With development of StepMania 5 being stagnant for so long, I wanted to bring back ITGmania's engine improvements for the greater StepMania 5 community, so that people don't have to be reliant on the 32-bit 2018 release. I also see many people who have made their own forks of StepMania  who have all done similar work trying to get it to buid on modern OS's.
+With development of StepMania 5 being stagnant for so long, I wanted to bring back ITGmania's engine improvements, security patches, updated build system and code health maintenance for the greater StepMania 5 community.
 
-The goal of this project is complete compatibility with StepMania 5.1 beta 2. However, in the interest of security, its capability to a open URL via Lua is blocked, and other relevant security fixes in ITGmania are present.
+The goal of this project is complete compatibility and identical user experience to the final StepMania 5 release, 5.1 beta 2. My goal is to keep it maintained for a long time.
 
-Besides that, it has fully been reverted to StepMania 5 branding, and the default StepMania 5 theme restored.
+The networking built into ITGmania has been disabled, and the Network Options menu is unavailable. It has fully been reverted to StepMania 5 branding, and the default StepMania 5 themes restored.
 
 I hope you enjoy StepMania 5 LTS.
 
@@ -34,7 +34,6 @@ I hope you enjoy StepMania 5 LTS.
 
 - Removed Simply Love, restored default StepMania 5 theme as default
 - Fully reverted ITGmania branding to original StepMania 5 branding
-- Installs to the SM5-LTS directory
 - ITGmania engine-based features have been removed:
     - GrooveStats chart hashing
     - Step rescoring
@@ -101,6 +100,7 @@ StepMania 5 LTS is under the GPLv3 license, or at your option, any later version
 
 For specific information/legalese:
 
+* The original SM5 themes are merged in with this project.
 * All of our source code is under the [GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.en.html). 
 * Songs included within the 'StepMania 5' folder are under the [<abbr title="Creative Commons Non-Commercial">CC-NC</abbr> license](https://creativecommons.org/).
 * The [MAD library](http://www.underbit.com/products/mad/) and [FFmpeg codecs](https://www.ffmpeg.org/) when built with our code use the [GPL license](http://www.gnu.org).
