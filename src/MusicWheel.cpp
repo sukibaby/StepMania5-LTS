@@ -1147,7 +1147,7 @@ void MusicWheel::FilterWheelItemDatas(std::vector<MusicWheelItemData *> &aUnFilt
 	}
 
 	/* Update the popularity.  This is affected by filtering. */
-	if( so == SORT_POPULARITY || so == SORT_POPULARITY_P1 || so == SORT_POPULARITY_P2 )
+	if( so == SORT_POPULARITY )
 
 	{
 		for( unsigned i=0; i < std::min<unsigned int>(3u, aFilteredData.size()); i++ )
